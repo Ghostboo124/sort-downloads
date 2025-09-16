@@ -80,9 +80,12 @@ fn main() -> result::Result<(), io::Error> {
         let document_exts = [
             OsStr::new("doc"),
             OsStr::new("docx"),
+            OsStr::new("docm"),
             OsStr::new("ppt"),
             OsStr::new("pptx"),
+            OsStr::new("pptm"),
             OsStr::new("xlsx"),
+            OsStr::new("xlsm"),
             OsStr::new("txt"),
             OsStr::new("rtf"),
             OsStr::new("md"),
@@ -93,6 +96,9 @@ fn main() -> result::Result<(), io::Error> {
             OsStr::new("bat"),
             OsStr::new("cmd"),
             OsStr::new("ps1"),
+            OsStr::new("sh"),
+            OsStr::new("base"),
+            OsStr::new("zsh"),
         ];
         let image_exts = [
             OsStr::new("svg"),
@@ -100,10 +106,14 @@ fn main() -> result::Result<(), io::Error> {
             OsStr::new("jpg"),
             OsStr::new("jpeg"),
             OsStr::new("webp"),
+            OsStr::new("gif"),
+            OsStr::new("dng"),
+            OsStr::new("cr2"),
         ];
         let installer_exts = [
             OsStr::new("msi"),
             OsStr::new("msix"),
+            OsStr::new("AppInstaller"),
         ];
         let pdf_exts = [
             OsStr::new("pdf"),
