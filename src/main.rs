@@ -105,7 +105,7 @@ fn main() -> result::Result<(), io::Error> {
         let installer_exts = [
             OsStr::new("msi"),
             OsStr::new("msix"),
-            OsStr::new("AppInstaller"),
+            OsStr::new("AppImage"),
         ];
         let pdf_exts = [
             OsStr::new("pdf"),
@@ -124,44 +124,44 @@ fn main() -> result::Result<(), io::Error> {
                 match entry.extension() {
                     Some(ext) => {
                         if archive_exts.contains(&ext) {
-                            let rename_result = fs::rename(entry.as_path(), Path::new(format!("{}{}{}", archive_path, MAIN_SEPERATOR_STR, )));
+                            let rename_result = fs::rename(entry.as_path(), Path::new(&format!("{}{}{}", archive_path.as_str(), MAIN_SEPARATOR_STR, name)));
                             if rename_result.is_err() {
                                 panic!("Rename failed with file {}: {}", name, rename_result.err().expect("No error when there should have been an error?").to_string());
                             }
                         } else if document_exts.contains(&ext) {
-                            let rename_result = fs::rename(entry.as_path(), Path::new(document_path));
+                            let rename_result = fs::rename(entry.as_path(), Path::new(&format!("{}{}{}", document_path.as_str(), MAIN_SEPARATOR_STR, name)));
                             if rename_result.is_err() {
                                 panic!("Rename failed with file {}: {}", name, rename_result.err().expect("No error when there should have been an error?").to_string());
                             }
                         } else if executable_exts.contains(&ext) {
-                            let rename_result = fs::rename(entry.as_path(), Path::new(executable_path));
+                            let rename_result = fs::rename(entry.as_path(), Path::new(&format!("{}{}{}", executable_path.as_str(), MAIN_SEPARATOR_STR, name)));
                             if rename_result.is_err() {
                                 panic!("Rename failed with file {}: {}", name, rename_result.err().expect("No error when there should have been an error?").to_string());
                             }
                         } else if image_exts.contains(&ext) {
-                            let rename_result = fs::rename(entry.as_path(), Path::new(image_path));
+                            let rename_result = fs::rename(entry.as_path(), Path::new(&format!("{}{}{}", image_path.as_str(), MAIN_SEPARATOR_STR, name)));
                             if rename_result.is_err() {
                                 panic!("Rename failed with file {}: {}", name, rename_result.err().expect("No error when there should have been an error?").to_string());
                             }
                         } else if installer_exts.contains(&ext) {
-                            let rename_result = fs::rename(entry.as_path(), Path::new(installer_path));
+                            let rename_result = fs::rename(entry.as_path(), Path::new(&format!("{}{}{}", installer_path.as_str(), MAIN_SEPARATOR_STR, name)));
                             if rename_result.is_err() {
                                 panic!("Rename failed with file {}: {}", name, rename_result.err().expect("No error when there should have been an error?").to_string());
                             }
                         } else if pdf_exts.contains(&ext) {
-                            let rename_result = fs::rename(entry.as_path(), Path::new(pdf_path));
+                            let rename_result = fs::rename(entry.as_path(), Path::new(&format!("{}{}{}", pdf_path.as_str(), MAIN_SEPARATOR_STR, name)));
                             if rename_result.is_err() {
                                 panic!("Rename failed with file {}: {}", name, rename_result.err().expect("No error when there should have been an error?").to_string());
                             }
                         } else {
-                            let rename_result = fs::rename(entry.as_path(), Path::new(other_path));
+                            let rename_result = fs::rename(entry.as_path(), Path::new(&format!("{}{}{}", other_path.as_str(), MAIN_SEPARATOR_STR, name)));
                             if rename_result.is_err() {
                                 panic!("Rename failed with file {}: {}", name, rename_result.err().expect("No error when there should have been an error?").to_string());
                             }
                         }
                     }
                     None => {
-                        let rename_result = fs::rename(entry.as_path(), Path::new(other_path));
+                        let rename_result = fs::rename(entry.as_path(), Path::new(&format!("{}{}{}", other_path.as_str(), MAIN_SEPARATOR_STR, name)));
                         if rename_result.is_err() {
                             panic!("Rename failed with file {}: {}", name, rename_result.err().expect("No error when there should have been an error?").to_string());
                         }
