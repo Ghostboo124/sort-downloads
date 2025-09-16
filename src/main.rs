@@ -50,15 +50,7 @@ fn main() -> result::Result<(), io::Error> {
     let installer_path: &String = &format!(r"{}{}installers", base_path, MAIN_SEPARATOR_STR);
     let other_path: &String = &format!(r"{}{}other", base_path, MAIN_SEPARATOR_STR);
     let pdf_path: &String = &format!(r"{}{}pdf", base_path, MAIN_SEPARATOR_STR);
-    // println!("{}", base_path);
-    // println!("{}", archive_path);
-    // println!("{}", executable_path);
-    // println!("{}", document_path);
-    // println!("{}", image_path);
-    // println!("{}", installer_path);
-    // println!("{}", other_path);
-    // println!("{}", pdf_path);
-    // panic!();
+
     if let Ok(entries) = read_dir(Path::new(base_path)) {
         let ignored = [
             "archives",
@@ -123,9 +115,6 @@ fn main() -> result::Result<(), io::Error> {
             check_dir(Path::new(&format!(r"{}{}{}", base_path, MAIN_SEPARATOR_STR, folder)));
         }
 
-        // The order in which `read_dir` returns entries is not guaranteed. If reproducible
-        // ordering is required the entries should be explicitly sorted.
-
         for entry in entries {
             if let Some(name) = entry.file_name()
                                     .and_then(|s| s.to_str()) {
@@ -135,7 +124,7 @@ fn main() -> result::Result<(), io::Error> {
                 match entry.extension() {
                     Some(ext) => {
                         if archive_exts.contains(&ext) {
-                            let rename_result = fs::rename(entry.as_path(), Path::new(archive_path));
+                            let rename_result = fs::rename(entry.as_path(), Path::new(format!("{}{}{}", archive_path, MAIN_SEPERATOR_STR, )));
                             if rename_result.is_err() {
                                 panic!("Rename failed with file {}: {}", name, rename_result.err().expect("No error when there should have been an error?").to_string());
                             }
