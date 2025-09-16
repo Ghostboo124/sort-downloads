@@ -4,8 +4,8 @@ version = "0.1.1"
 edition = "2024"
 license-file = "COPYING.txt"
 description = "My TUI for generating different types of projects"
-homepage = "https://gitlab.com/Ghostboo124/sort-downloads.git"
-repository = "https://gitlab.com/Ghostboo124/sort-downloads.git"
+homepage = "https://codeberg.org/Ghostboo124/sort-downloads.git"
+repository = "https://codeberg.org/Ghostboo124/sort-downloads.git"
 readme = "README.md"
 
 [[bin]]
