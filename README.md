@@ -6,15 +6,15 @@ A tool to sort the windows downloads folder (linux support coming soon)
 
 To use this, you install it with `cargo install sort-downloads` and then run `sort-downloads` and it will sort your downloads folder into 7 folders, documents, other, archives, executables, images, installers, and pdf. The folder a file goes in is based off of the following extentions
 
-|      Folder | Extentions                                       |
-| ----------: | ------------------------------------------------ |
-|   documents | .doc, .docx, .ppt, .pptx, .xlsx, .txt, .rtf, .md |
-|    archives | .zip, .rar, .tar, .7z, .xz, .gz                  |
-| executables | .exe, .com, .bat, .cmd, .ps1                     |
-|      images | .svg, .png, .jpg, .jpeg, .webp                   |
-|  installers | .msi, .msix                                      |
-|       other | anything else                                    |
-|         pdf | .pdf                                             |
+|      Folder | Extentions                                                            |
+| ----------: | --------------------------------------------------------------------- |
+|   documents | .doc, .docx, .docm, .ppt, .pptx, .pptm, .xlsx, .xlsm, .txt, .rtf, .md |
+|    archives | .zip, .rar, .tar, .7z, .xz, .gz                                       |
+| executables | .exe, .com, .bat, .cmd, .ps1, .sh, .bash, .zsh                        |
+|      images | .svg, .png, .jpg, .jpeg, .webp, .gif                                  |
+|  installers | .msi, .msix .AppImage                                                 |
+|         pdf | .pdf                                                                  |
+|       other | anything else                                                         |
 
 ## Building
 
