@@ -1,10 +1,10 @@
 # Sort Downloads
 
-A tool to sort the windows downloads folder (linux support coming soon)
+A tool to sort the windows or linux downloads folder.
 
 ## Usage
 
-To use this, you install it with `cargo install sort-downloads` and then run `sort-downloads` and it will sort your downloads folder into 7 folders, documents, other, archives, executables, images, installers, and pdf. The folder a file goes in is based off of the following extentions
+To use this, you install it with `cargo install sort-downloads` and then run `sort-downloads` or download it from the [GitHub Releases](https://github.com/Ghostboo124/sort-downloads/releases/latest) (though cargo is preferable) and run `./sort-downloads` on linux and powershell and `.\sort-downloads` on Windows command prompt and it will sort your downloads folder into 7 folders, documents, other, archives, executables, images, installers, and pdf. The folder a file goes in is based off of the following extentions
 
 |      Folder | Extentions                                                            |
 | ----------: | --------------------------------------------------------------------- |
